@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2 class="center">{{ search | title }}</h2>
+    <div class="row">
+
+        {% for posting in final_postings %}
+
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="{{ posting.1 }}">
+                            <img src="{{ posting.1 }}" alt="{{ posting.1 }}">
+                        </a>
+                        <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ posting.2 }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ posting.1 }}">View Price: {{ posting.2 }}</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+    </div>
+
+
+{% endblock %}
